@@ -1,3 +1,7 @@
+
+// Este programa analisa palavras e textos procurando anagramas entre elas, ao final do programa ele informa
+// a quantidade de anagramas possíveis com o texto.
+
 package Application;
 
 import java.util.ArrayList;
@@ -25,25 +29,28 @@ public class Questao03 {
 		System.out.print("Digite a palavra: ");
 		palavra = sc.nextLine();
 
-		System.out.println(palavra);
+	// Montando a lista com as possibilidades de anagramas
 		
 		for (i = 0; i < palavra.length(); i++) {
 			for (j = i+1; j <= palavra.length(); j++) {
 				palavras.add(palavra.substring(i,j));
 			}
 		}
+		
+	// Colocando a lista em ordem alfabética	
+		
 		Collections.sort(palavras);
 		
-
+	// Colocando cada possibilidade de anagrama em ordem alfabética
+		
 		for (i = 0; i < palavras.size(); i++) {
 
 				teste1.add(sortString(palavras.get(i)));
 				Collections.sort(teste1);
-//				List<String> teste2 = new ArrayList();
-	//			teste2.add(sortString(teste1.get(i)));
-			
-				total += Collections.frequency(teste1, teste1);
 		}
+		
+	// Analisando a quantidade de vezes que cada string(possibilidade de anagrama) aparece na lista	
+		
 		for (i = 0; i < palavras.size(); i++) {
 			if (Collections.frequency(teste1, teste1.get(i)) > 1) {
 				total += 1;

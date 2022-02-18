@@ -1,3 +1,6 @@
+// Este programa imprime na tela uma escada, onde o usuário informa um número, que serve para informar
+// ao sistema quantas linhas e caracteres por linha a escada vai ter
+
 package Application;
 
 import java.util.Scanner;
@@ -19,10 +22,7 @@ public class Questao01 {
 		// Chamano o método Escada que monta o desenho a partir do número digitado	
 			
 			Escada(numero);
-		
 		}
-		
-		
 		
 		sc.close();
 	}

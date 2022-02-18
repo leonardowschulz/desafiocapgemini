@@ -1,3 +1,6 @@
+// Este programa é um sistema de conferência de senhas. O usuário digita uma senha e o sistema confirma
+// se ela é uma senha segura, ou quais características devem ser adicionadas para ela ficar segura
+
 package Application;
 
 import java.util.Scanner;
@@ -14,6 +17,8 @@ public class Questao02 {
 		int espaco, digito, minusculo, maiusculo, especial, i, f;
 		boolean senhaAprovada = false;
 		
+	// Começando a imprimir os dados e captando a senha. O comando while vai ficar pedindo uma nova senha
+	// até que uma senha segura seja digitada
 		
 		while (senhaAprovada == false) {
 			System.out.println("Para criar sua senha, ela deve seguir os seguintes critérios:");
@@ -27,6 +32,8 @@ public class Questao02 {
 			senha = sc.nextLine();
 			espaco = digito = minusculo = maiusculo = especial = i = f = 0;
 		
+		// Aqui é feita a analise da senha, verificando se ela atende aos requisitos	
+			
 			for (i = 0; i < senha.length(); i++) {
 				for (f = 0; f < caractereEspecial.length(); f++) {
 					if (caractereEspecial.charAt(f) == senha.charAt(i)) {
@@ -47,6 +54,10 @@ public class Questao02 {
 				}
 		
 			}
+			
+		// Aqui é verificado se a senha atendeu ou não os critérios, caso negativo, é explicado ao usuário
+		// o que ele precisa fazer para deixar sua sennha segura
+			
 			if (maiusculo < 1 || minusculo < 1 || espaco > 0 || especial < 1 || digito < 1 || senha.length() < minimoCaracteres) {
 				System.out.println("Tente novamente. Sua senha precisa conter: ");
 				if (senha.length() < minimoCaracteres) {
@@ -71,6 +82,10 @@ public class Questao02 {
 				sc.nextLine();
 
 			}
+			
+		// Assim que a senha estiver correta, o programa encerra o loop, informa que a senha
+		// está aprovada e encerra o programa
+			
 			else {
 				senhaAprovada = true;
 			}		
