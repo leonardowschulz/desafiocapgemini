@@ -8,10 +8,10 @@ public class Questao02 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		String senha, retorno;
+		String senha;
 		String caractereEspecial = "!@#$%^&*()-+";
 		int minimoCaracteres = 6;
-		int espaco, caracteres, digito, minusculo, maiusculo, especial, i, f;
+		int espaco, digito, minusculo, maiusculo, especial, i, f;
 		boolean senhaAprovada = false;
 		
 		
@@ -25,7 +25,7 @@ public class Questao02 {
 			System.out.println("");
 			System.out.print("Digite a senha a ser criada: ");
 			senha = sc.nextLine();
-			espaco = caracteres = digito = minusculo = maiusculo = especial = i = f = 0;
+			espaco = digito = minusculo = maiusculo = especial = i = f = 0;
 		
 			for (i = 0; i < senha.length(); i++) {
 				for (f = 0; f < caractereEspecial.length(); f++) {
